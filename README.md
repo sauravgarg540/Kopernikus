@@ -1,6 +1,12 @@
 # Data Cleaning pipeline task by Kopernikus
 
-How to run
+Step 1. Create and activate conda enviroment
+```python
+conda env create -f environment.yml
+conda activate data_cleaning
+```
+
+Step 2. Run the main file with path to images
 ```python
 python main.py --dir <path to images>
 ```
