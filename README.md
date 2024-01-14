@@ -1,12 +1,12 @@
 # Data Cleaning pipeline task by Kopernikus
 
-Step 1. Create and activate conda enviroment
+Step 1. Create and activate the conda environment
 ```python
 conda env create -f environment.yml
 conda activate data_cleaning
 ```
 
-Step 2. Run the main file with path to images
+Step 2. Run the main file with the path to the images
 ```python
 python main.py --dir <path to images>
 ```
@@ -26,13 +26,13 @@ python main.py --dir <path to images>
 The entire process is repeated for each unique camera_id to systematically identify and mark images for removal across all cameras.
 
 1. Each camera provides a distinct viewpoint, so we organize the dataset based on the camera_id. We maintain a dictionary that associates each camera_id with its corresponding set of images.
-2. To facilitate sorting, we convert Python datetime objects to Unix timestamps. This ensures chronological ordering of the images across all cameras.
+2. To facilitate sorting, we convert Python datetime objects to Unix timestamps. This ensures the chronological ordering of the images across all cameras.
 3. We sort the images based on their timestamps. This step is crucial as images captured closer in time are more likely to exhibit similarities.
 4. We define a sliding window mechanism to efficiently compare images. This involves selecting a base image and comparing it with others within a specified window.
 5. To optimize processing, we implement a caching mechanism. This prevents the unnecessary reloading of images within a window, improving overall efficiency.
 6. The first image within a window is chosen as the base image for comparison. Subsequent images within the window are compared against this base image
 7. Images are compared using a scoring mechanism, and if the score exceeds a predefined threshold, the image path is marked for removal.
-8. Remove the images marked for removed for a camera id.
+8. Remove the images marked for removal from the directory.
 
 
 # Choosing the right values
@@ -40,7 +40,7 @@ The entire process is repeated for each unique camera_id to systematically ident
 The values for min_contour_area and min_score were chosen with experimentation.
 We chose  min_contuor_area as 100 and min_score as 3000.
 
-Starting with conservative values and analysing the results these score were estimated to be giving good results.
+Starting with conservative values and analysing the results these scores were estimated to be giving good results.
 
 # How to improve data-collection
 
