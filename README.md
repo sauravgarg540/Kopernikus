@@ -1,5 +1,10 @@
 # Data Cleaning pipeline task by Kopernikus
 
+How to run
+```python
+python main.py --dir <path to images>
+```
+
 ## About the dataset:
 
 - This dataset comprises images depicting covered parking lots.
