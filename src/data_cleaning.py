@@ -54,7 +54,7 @@ def _clean_per_camera(img_paths, window=10):
 
     for i in range(len(img_paths)):
         remove.extend(get_scores_window(img_paths[i : i + window]))
-    print(remove)
+    
     return remove
 
 
