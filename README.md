@@ -18,7 +18,7 @@ python main.py --dir <path to images>
 - Each image is labeled with a unique identifier composed of the camera ID and timestamp.
 - Timestamps are provided in two formats: Unix and Python datetime.
 - The images encompass various times of the day.
-- Some images may contain noise, and there are instances where images are labeled as None.
+- Some images may contain noise, and there are instances where images are None.
 - Images vary in size.
 
 ## How does the code work?
