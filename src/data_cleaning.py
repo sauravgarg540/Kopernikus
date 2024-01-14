@@ -1,8 +1,8 @@
 import os
 
+from config import *
 from utils.general_utils import get_images_per_camera
 from utils.image_utils import *
-from config import *
 
 # global values for speed up
 # This saves image loading time
@@ -37,7 +37,9 @@ def get_scores_window(window):
 
     base_frame = image_cache[0]
     for i, next_frame in enumerate(image_cache[1:]):
-        score, _, _ = compare_frames_change_detection(base_frame, next_frame, min_contour_area)
+        score, _, _ = compare_frames_change_detection(
+            base_frame, next_frame, min_contour_area
+        )
         if score < min_score:
             remove.append(img_path_cache[i + 1])
     return remove
